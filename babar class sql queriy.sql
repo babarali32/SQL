@@ -48,6 +48,20 @@ select country,count(officecode) FROM classicmodels.officesgroup group by countr
 SELECT * FROM classicmodels.customers;
 SELECT * FROM classicmodels.offices;
 select country, count(*) from classicmodels.offices group by country;
+SELECT distinct COUNTRY FROM  classicmodels.offices;
+SELECT COUNTRY FROM  classicmodels.offices WHERE country='usa';
+SELECT contactfirstname FROM  classicmodels.customers WHERE length(contactfirstname)<=3;
+SELECT customerNumber FROM  classicmodels.customers WHERE customerNumber>=100 and customerNumber<=200;
+SELECT lower(contactfirstname) FROM classicmodels.customers; 
+SELECT lower (contactFirstName) FROM classicmodels.customers where contactfirstname like 'J%'; 
+Select * FROM classicmodels.customers order by country;
+Select country,count(*) FROM classicmodels.customers group by country;
+SELECT * FROM classicmodels.employees;
+select reportsto,count(*) from classicmodels.employees group by reportsTo having reportsTo='1002';
+
+
+
+
 
 
 
