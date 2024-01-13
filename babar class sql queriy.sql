@@ -58,10 +58,23 @@ Select * FROM classicmodels.customers order by country;
 Select country,count(*) FROM classicmodels.customers group by country;
 SELECT * FROM classicmodels.employees;
 select reportsto,count(*) from classicmodels.employees group by reportsTo having reportsTo='1002';
-
-
-
-
+select jobTitle,count(*)  from classicmodels.employees group by jobTitle having count(*)>1;
+SELECT * FROM classicmodels.employees;
+SELECT lastname FROM classicmodels.employees where lastname like '';
+Select officecode , avg(reportsTo) from classicmodels.employees group by officeCode ;
+SELECT avg(customerNumber) FROM classicmodels.payments;
+SELECT * FROM classicmodels.payments where customerNumber>(SELECT avg(customerNumber) FROM classicmodels.payments);
+SELECT lastname,reportsTo FROM classicmodels.employees where reportsTo<1100;
+SELECT * FROM classicmodels.employees where reportsTo in (SELECT reportsTo FROM classicmodels.employees where reportsTo<1100);
+SELECT * FROM classicmodels.employees where reportsTo=1002 or reportsTo=1056;
+SELECT * FROM classicmodels.employees where reportsTo in (1002,1100);
+SELECT reportsTo FROM classicmodels.employees where reportsTo<1056;
+SELECT * FROM classicmodels.employees where reportsTo<1056;
+-- SELECT * FROM classicmodels.employees where reportsTo in (SELECT reportsTo FROM classicmodels.employees where reportsTo<1056)
+SELECT reportsTo FROM classicmodels.employees where reportsTo<1056;
+SELECT * FROM classicmodels.products;
+SELECT buyPrice FROM classicmodels.products where buyPrice<20;
+SELECT * FROM classicmodels.employees where reportsTo in (SELECT buyPrice FROM classicmodels.products where buyPrice<20);
 
 
 
