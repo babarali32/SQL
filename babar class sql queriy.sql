@@ -75,10 +75,16 @@ SELECT reportsTo FROM classicmodels.employees where reportsTo<1056;
 SELECT * FROM classicmodels.products;
 SELECT buyPrice FROM classicmodels.products where buyPrice<20;
 SELECT * FROM classicmodels.employees where reportsTo in (SELECT buyPrice FROM classicmodels.products where buyPrice<20);
+SELECT * FROM babardatabase.departments;
+SELECT * FROM babardatabase.countries;
+SELECT * FROM babardatabase.job_history;
+SELECT * FROM babardatabase.locations;
+SELECT * FROM babardatabase.regions;
+SELECT * FROM employees;
+SELECT * FROM jobs;
+SELECT first_name,job_title FROM employees,jobs where employees.job_id=jobs.job_id;
+Select  hire_date,job_title, salary FROM employees,jobs WHERE employees.job_id=jobs.job_id like '%-01-%';
+SELECT first_name,job_title FROM employees,jobs where employees.job_id=jobs.job_id;
+SELECT country_name , region_name from regions, countries where regions.region_id=countries.region_id ;
 
-
-
-
-
-
-
+ 
